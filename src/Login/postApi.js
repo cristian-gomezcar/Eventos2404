@@ -41,7 +41,7 @@ export default class App extends Component {
         nombre: this.state.User,
         fecha:'2025-05-15',
         hora:'23:00:00',
-        lugar:'San Marcos Hogar del yeyson hueco',
+        lugar:'San Marcoso',
         estado:'3',
         organizadores: this.state.Pass
         };

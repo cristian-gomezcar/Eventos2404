@@ -97,7 +97,7 @@ export default class fbLogin extends Component {
         </View>
 
         <View style={styles.tengo}>
-        <TouchableOpacity style={styles.registrar} onPress={() =>this.props.navigation.navigate('Iniciar')}>
+        <TouchableOpacity style={styles.registrar} onPress={() =>this.props.navigation.navigate('Nav')}>
             <Text style={{textAlign:'center',color:'white',fontWeight: 'bold',padding:5}}>Tengo un Perfil</Text>
         </TouchableOpacity>            
         </View>

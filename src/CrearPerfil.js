@@ -67,7 +67,7 @@ export default class CrearPerfil extends Component {
         };
         try {
             let response = await fetch(
-            "https://rijhn09.pythonanywhere.com/usuarios/",
+            "https://rijhn09.pythonanywhere.com/usuarios/crear/",
             {
             method: "POST",
             headers: {

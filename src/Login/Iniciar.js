@@ -25,6 +25,7 @@ export default class App extends Component {
         Pass:"",
         username:"",
         password:"",
+        token:''
 
       };
     }
@@ -49,11 +50,20 @@ export default class App extends Component {
             },
                body: JSON.stringify(data)
              }
-            )
+            )   
+            .then((res) => res.json())
+            .then(Data => {
+                console.warn(Data)
+                this.setState({
+                    pokemon:Data.token
+                })
+                
+            })
 
-             if (response.status >= 200 && response.status < 300) {
-                alert('Bienvenido: '+this.state.User);  
-                this.props.navigation.navigate('Nav')  
+            if (this.state.pokemon) {
+                alert('Bienvenido: '+this.state.User);   
+                this.props.navigation.navigate('Eventos',{nombre:this.state.pokemon})
+               
              }
              else
              {
@@ -103,12 +113,14 @@ const styles= StyleSheet.create({
         paddingRight:15,
         marginTop:30,
         alignContent:'center',
+        justifyContent:'center'
          },
     input:{
-        height:40,
+        height:50,
         borderColor:'#ccc',
         borderWidth:2,
-        marginBottom:20
+        marginBottom:20,
+        fontSize:21
         },
     registrar:{
         backgroundColor:'skyblue',

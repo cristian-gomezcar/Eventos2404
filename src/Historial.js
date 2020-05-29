@@ -37,14 +37,9 @@ export default class HomeView  extends Component{
   }
 
  async componentDidMount(){
-  var { nombre }=this.props.route.params;
-  var de=JSON.stringify(nombre);
-  let depa=JSON.parse(de)
-    
-  console.warn('11111',de);
      console.warn('11111',global.SampleVar2);
            fetch(
-            `https://rijhn09.pythonanywhere.com/evento/mostrar/${depa}`,
+            "https://rijhn09.pythonanywhere.com/evento/mostrar/?format=json",
            {
            method: "GET",
            headers: {

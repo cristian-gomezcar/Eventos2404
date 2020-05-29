@@ -38,6 +38,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 export default class departamentos extends Component{
 
   render(){
+    console.warn('Prubasndlkaj',global.SampleVar);
     return(
       <ScrollView style={{backgroundColor:'#134379'}}>
             <View style={{alignItems:'flex-end'}}>
@@ -47,7 +48,8 @@ export default class departamentos extends Component{
           </View>
         <View style={styles.contenedor}>
           <View style={styles.listado}>
-            <Button  title="Alta Verapaz" onPress={() =>this.props.navigation.navigate('HomeView')}/>
+            
+            <Button  title="San Marcos" onPress={() =>this.props.navigation.navigate('depas',{nombre:'San Marcos'})}/>
           </View>
           <View style={styles.listado}>
             <Button  title="Baja Verapaz" onPress={this.saludo} />
@@ -68,7 +70,7 @@ export default class departamentos extends Component{
           </View>
 
           <View style={styles.listado}>
-            <Button  title="Guatemala" onPress={this.saludo} />
+            <Button  title="Guatemala" onPress={() =>this.props.navigation.navigate('depas',{nombre:'Guatemala'})} />
           </View>
           <View style={styles.listado}>
             <Button  title="Huehuetenango" onPress={this.saludo} />
@@ -88,7 +90,7 @@ export default class departamentos extends Component{
             <Button  title="Petén" onPress={this.saludo} />
           </View>
           <View style={styles.listado}>
-            <Button  title="Quetzaltenango" onPress={this.saludo} />
+            <Button  title="Quetzaltenango" onPress={() =>this.props.navigation.navigate('depas',{nombre:'Quetzaltenango'})} />
           </View>
           <View style={styles.listado}>
             <Button  title="Quiché" onPress={this.saludo} />

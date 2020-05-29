@@ -19,11 +19,14 @@ import HomeView from './HomeView'
 import departamentos from './departamentos'
 import FbLogin from './Login/FbLogin'
 import CrearPerfil from './CrearPerfil'
-import iniciar from './Login/Iniciar'
 import Iniciar from './Login/Iniciar';
 import postApi from './Login/postApi'
 import google from './components/google'
 import depas from './EventosDepa'
+import DetalleEvento from './DetalleEvento'
+import Comprar from './ComprarBoleto'
+import pagos from './pagos'
+import recibo from './recibo'
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -49,7 +52,11 @@ function CustomDrawerContent(props) {
 function Root() {
   return ( 
     <Drawer.Navigator drawerContent={props => <CustomDrawerContent {...props} />}>
+      <Drawer.Screen name="Iniciar" component={Iniciar} options={{drawerLabel : ( )  => null}} />
       <Drawer.Screen name="Eventos" component={HomeView} />
+      <Drawer.Screen name="Departamentos" component={departamentos} />
+      
+      
     </Drawer.Navigator>
   );
 }
@@ -58,14 +65,6 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-
-      <Drawer.Screen name="Iniciar" component={Iniciar} options={{
-          title: '',
-          headerStyle: {
-          height:10,
-
-          },
-        }}/>
 
       <Stack.Screen name="Login" component={FbLogin} options={{
           title: '',
@@ -79,7 +78,54 @@ function App() {
       <Stack.Screen name="Nav" component={Root} options={{
           title: '',
           headerStyle: {
-            height:20,
+            height:10,
+            backgroundColor:'#134379',
+            margin:0
+
+          },
+        }}/>
+
+      <Stack.Screen name="pagos" component={pagos} options={{
+          title: '',
+          headerStyle: {
+            height:10,
+            backgroundColor:'#134379',
+            margin:0
+
+          },
+        }}/>
+
+      <Stack.Screen name="recibo" component={recibo} options={{
+          title: '',
+          headerStyle: {
+            height:10,
+            backgroundColor:'#134379',
+            margin:0
+
+          },
+        }}/>
+
+
+        
+
+      <Stack.Screen name="Comprar" component={Comprar} options={{
+          title: '',
+          headerStyle: {
+            height:10,
+            backgroundColor:'#134379',
+            margin:0
+
+          },
+        }}/>
+
+
+
+
+
+        <Stack.Screen name="Detalle" component={DetalleEvento} options={{
+          title: '',
+          headerStyle: {
+            height:10,
             backgroundColor:'#134379',
             margin:0
 
@@ -92,7 +138,7 @@ function App() {
           title: '',
           headerStyle: {
             backgroundColor: 'white',
-            height:0,
+            height:10,
 
           },
         }}/> 
@@ -102,13 +148,12 @@ function App() {
       <Drawer.Screen name="CrearPerfil" component={CrearPerfil} options={{
           title: '',
           headerStyle: {
-          height:0,
+          height:10,
 
           },
         }}/>
 
        
-
       <Drawer.Screen name="postApi" component={postApi} options={{
           title: '',
           headerStyle: {
@@ -120,24 +165,10 @@ function App() {
       <Drawer.Screen name="google" component={google} options={{
           title: '',
           headerStyle: {
-          height:0,
+          height:10,
 
           },
         }}/>
-
-      
-
-      
-
-     
-
-
-
-
-
-
-
-
       
     </Stack.Navigator>
       
